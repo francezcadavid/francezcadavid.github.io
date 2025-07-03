@@ -1,16 +1,14 @@
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-  alert("Welcome to my site!");
-
 const toggleBtn = document.getElementById('menuToggle');
 const navList = document.getElementById('navList');
+const icon = toggleBtn.querySelector('.icon');
 
 toggleBtn.addEventListener('click', () => {
-  toggleBtn.classList.toggle('open');
   navList.classList.toggle('open');
+  if (navList.classList.contains('open')) {
+    icon.textContent = '✕';
+    toggleBtn.setAttribute('aria-label', 'Close menu');
+  } else {
+    icon.textContent = '☰';
+    toggleBtn.setAttribute('aria-label', 'Open menu');
+  }
 });
-
-// Example function for About overlay (optional)
-function toggleAboutOverlay() {
-  document.getElementById('aboutOverlay').classList.toggle('active');
-}
