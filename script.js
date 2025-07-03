@@ -15,3 +15,17 @@ function toggleAboutOverlay() {
 // function toggleTheme() { ... }
 // function toggleMusic() { ... }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const dropdown = document.getElementById("navDropdown");
+
+  hamburger.addEventListener("click", () => {
+    dropdown.classList.toggle("show");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+});
