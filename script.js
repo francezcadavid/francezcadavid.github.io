@@ -2,7 +2,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   alert("Welcome to my site!");
 
-  document.querySelector(".menu-toggle").addEventListener("click", function() {
-      this.classList.toggle("open");
-      document.querySelector(".nav-list").classList.toggle("open");
-    });
+const toggleBtn = document.getElementById('menuToggle');
+const navList = document.getElementById('navList');
+
+toggleBtn.addEventListener('click', () => {
+  toggleBtn.classList.toggle('open');
+  navList.classList.toggle('open');
+});
+
+// Example function for About overlay (optional)
+function toggleAboutOverlay() {
+  document.getElementById('aboutOverlay').classList.toggle('active');
+}
