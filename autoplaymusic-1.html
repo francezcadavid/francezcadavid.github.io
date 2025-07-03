@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Music Player</title>
+    <style>
+        /* Style for the page background */
+        body {
+            background-color: #333; /* Dark grey background color */
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the song containers */
+        .song-container {
+            background-color: navy; /* Navy blue background color */
+            border: 10px solid #ccc;
+            border-radius: 20px; /* Rounded corners */
+            margin: 20px auto;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        /* Style for the song description */
+        .song-description {
+            font-weight: italic;
+            margin-bottom: 20px;
+            color: white; /* Text color set to white */
+            font-size: 24px; /* Increased font size to 24px */
+        }
+
+        /* Style for the audio player */
+        audio {
+            width: 100%;
+        }
+
+        /* Style for the lyrics display */
+        .lyrics {
+            color: white;
+            font-size: 18px;
+            white-space: pre-line;
+        }
+
+        /* Style for the highlighted lyrics */
+        .highlight {
+            background-color: #ff0; /* Yellow background color */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Song 1 -->
+    <div class="song-container">
+        <p class="song-description">Heart Wont Let Me</p>
+        <audio controls class="audio-player" id="audio1" autoplay loop>
+            <source src="./music/heartwontletme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="lyrics" id="lyrics1">
+            <!-- Lyrics for Song 1 go here -->
+            0:00 - You and I always fight<br>
+            7:78 - 'Bout the same old thing<br>
+            15:03 - In the car, at the bar<br>
+            16:78 - By the kitchen sink
+        </div>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="song-container">
+        <p class="song-description">Anything 4 U</p>
+        <audio controls class="audio-player" id="audio2" autoplay loop>
+            <source src="./music/anything4u.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="lyrics" id="lyrics2">
+            <!-- Lyrics for Song 2 go here -->
+            6:81 - I know the house you grew up in<br>
+            10:30 - All of the names of your best friends
+        </div>
+    </div>
+
+    <script>
+        // Define the lyrics and timestamps for each song here
+        const lyricsData = [
+            // Song 1 lyrics
+            `7.89|12.40|You and I always fight 'bout the same old thing
+            12.40|19.92|In the car, at the bar, by the kitchen sink
+            19.92|28.43|You used to say you want me, now we just say, "Sorry"
+            28.43|33.94|You and I always fight 'bout the same old thing
+            33.94|37.69|I should've probably already left
+            37.69|40.95|But I never listen to my head
+            40.95|45.45|Say I'm gonna go, can't take it anymore
+            40.95|48.96|Keys are in my hand, got one foot out the door
+            45.45|53.97|Every time I try, every time I try to leave
+            53.97|56.24|My heart won't let me
+            56.24|62.49|Not OK, God I hate, hate the place we're in
+            62.49|69.50|But I forget for a sec when I kiss your lips
+            69.50|73.00|I should've probably already left
+            73.00|76.76|But I never listen to my head
+            76.76|80.78|Say I'm gonna go, can't take it anymore
+            80.78|84.28|Keys are in my hand, got one foot out the door
+            84.28|89.28|Every time I try, every time I try to leave
+            89.28|91.54|My heart won't let me
+            91.54|94.79|Be the one to quit, I know it's gonna hurt
+            94.79|98.30|Lyin' to myself will only make it worse
+            98.30|103.31|Every time I try, every time I try to leave
+            103.31|110.08|My heart won't let me
+            110.08|119.33|My heart won't let me
+            119.33|123.60|You used to say you want me
+            123.60|126.85|Now we just say, "Sorry"
+            126.85|132.60|Why can't I just walk away?
+            132.60|137.11|Say I'm gonna go, can't take it anymore
+            137.11|140.62|Keys are in my hand, got one foot out the door
+            140.62|145.63|Every time I try, every time I try to leave
+            145.63|147.88|My heart won't let me
+            147.88|151.38|Be the one to quit, I know it's gonna hurt
+            151.38|154.89|Lyin' to myself will only make it worse
+            154.89|154.89|Every time I try, every time I try to leave
+            159.90|166.91|My heart won't let me
+            166.91|173.92|My heart won't let me
+            166.91|173.92|My heart won't let me`,
+
+            // Song 2 lyrics
+            `6.81|10.30|I know the house you grew up in
+            10.30|13.55|All of the names of your best friends
+            13.55|20.05|I know the way you feel about your dad
+            20.05|23.30|I spent the summer on your couch
+            23.30|26.55|You fell in love with someone else
+            26.55|32.06|You came to me the times that it went bad
+            32.06|35.05|I'm somethin' so familiar
+            35.05|38.30|That you don't even notice
+            38.30|41.80|The way I wanna love ya
+            41.80|45.80|It's time that you should know this, know this
+            45.80|49.30|I'll catch a flight, go to the moon
+            49.30|52.30|Lay on the floor of your living room
+            52.30|58.80|And talk about the things that make you cry
+            58.80|62.30|I'll sell my soul, sell my guitar
+            62.30|65.54|Sleep in the back of a beat-up car
+            65.54|68.05|Girl, just tell me what I have to do
+            68.05|73.05|I'll do anything for you
+            73.05|81.58|You know the house I grew up in
+            81.58|85.06|You wouldn't knock, you'd just walk in
+            85.06|88.30|Stay up for hours talkin' to my mom
+            88.30|93.80|I'm somethin' so familiar
+            93.80|96.79|That you don't even notice
+            96.79|100.30|The way I wanna love ya
+            100.30|103.55|It's time that you should know this, know this
+            103.55|107.79|I'll catch a flight, go to the moon
+            107.79|111.05|Lay on the floor of your living room
+            111.05|114.30|And talk about the things that make you cry
+            114.30|120.80|I'll sell my soul, sell my guitar
+            120.80|124.30|Sleep in the back of a beat-up car
+            124.30|127.55|Girl, just tell me what I have to do
+            127.55|133.70|If you say you wanna leave this town tonight
+            133.70|138.70|Then let's do it
+            138.70|140.20|If we're halfway there and then you change your mind
+            140.20|145.19|There's nothin' to it
+            145.19|147.19|If it takes the rest of my whole life to prove it
+            147.19|153.69|I'll catch a flight, go to the moon
+            153.69|156.95|Lay on the floor of your living room
+            156.95|160.20|And talk about the things that make you cry
+            160.20|165.44|I'll never walk into another bar
+            165.44|169.94|I'll burn these tattoos off my arms
+            169.94|173.19|I'll go to hell and back if I have to
+            173.19|177.69|I'll do anything for you
+            177.69|183.19|I'll do anything for you
+            183.19|190.68|I'll do anything for you`
+        ];
+
+        function updateLyrics(audioElement, lyricsContainer, rawLyrics) {
+            const lines = rawLyrics.split('\n');
+            const audio = audioElement;
+
+            audio.addEventListener('timeupdate', function () {
+                const currentTime = audio.currentTime;
+
+                // Reset styles
+                lines.forEach(line => {
+                    const [start, end] = line.split('|');
+                    const lineElement = document.getElementById(`line-${start}-${end}`);
+                    if (lineElement) {
+                        lineElement.classList.remove('highlight');
+                    }
+                });
+
+                for (const line of lines) {
+                    const [start, end, text] = line.split('|');
+                    const startFloat = parseFloat(start);
+                    const endFloat = parseFloat(end);
+
+                    if (currentTime >= startFloat && currentTime <= endFloat) {
+                        // Update the lyrics container
+                        lyricsContainer.innerHTML = text;
+
+                        // Highlight the corresponding line
+                        const lineElement = document.getElementById(`line-${start}-${end}`);
+                        if (lineElement) {
+                            lineElement.classList.add('highlight');
+                        }
+                        break;
+                    }
+                }
+            });
+
+            // Restart the audio when it ends
+            audio.addEventListener('ended', function () {
+                audio.currentTime = 0;
+                audio.play();
+            });
+        }
+
+        // Get audio elements and lyrics containers
+        const audio1 = document.getElementById('audio1');
+        const lyricsContainer1 = document.getElementById('lyrics1');
+        updateLyrics(audio1, lyricsContainer1, lyricsData[0]);
+
+        const audio2 = document.getElementById('audio2');
+        const lyricsContainer2 = document.getElementById('lyrics2');
+        updateLyrics(audio2, lyricsContainer2, lyricsData[1]);
+    </script>
+
+</body>
+
+</html>
