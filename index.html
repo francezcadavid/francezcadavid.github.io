@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Welcome to francezca15's site</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>francezca15 – Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
 </head>
 <body>
-  <h1>Subscribe to my YT channel <a href="https://www.youtube.com/@francezca15" target="_blank">francezca15</a></h1>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <div class="hamburger">☰</div>
+        <a class="nav-home" href="index.html">Home</a>
+      </div>
+      <div class="nav-right">
+        <a class="nav-about" href="about.html">About Me</a>
+        <img src="profile.jpg" alt="Profile" class="profile-pic" onclick="toggleAboutOverlay()" />
+      </div>
+    </nav>
+  </header>
 
-  <script src="script.js"></script>
+  <main>
+    <section class="hero">
+      <h1>francezca15</h1>
+      <p>Content Creator</p>
+    </section>
+
+    <section class="projects-section">
+      <h2>Featured Projects</h2>
+      <div class="project-gallery">
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+      </div>
+    </section>
+  </main>
+
+  <div class="about-overlay" id="aboutOverlay">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>Hello! I'm francezca15. Welcome to my portfolio site!</p>
+      <button onclick="toggleAboutOverlay()">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; francezca15 2025
+  </footer>
 </body>
 </html>
