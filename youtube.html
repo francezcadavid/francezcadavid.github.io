@@ -2,47 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mini YouTube Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>francezca15</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="logo">MyTube</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search" />
-      <button>🔍</button>
+  <header>
+    <img src="assets/banner.jpg" alt="Banner" class="banner" />
+    <div class="channel-info">
+      <img src="assets/profile.png" alt="Profile" class="profile-pic" />
+      <div class="details">
+        <h1>francezca15</h1>
+        <p>@francezca15 · 22 subscribers · 209 videos</p>
+        <a href="https://francezcadavid.github.io" target="_blank">francezcadavid.github.io</a>
+      </div>
     </div>
-    <div class="user-icon">
-  <img src="profile_logo_youtube.png" alt="User profile">
-</div>
-
+    <nav>
+      <ul>
+        <li class="active">Home</li>
+        <li>Mga Video</li>
+        <li>Shorts</li>
+        <li>Live</li>
+        <li>Mga Playlist</li>
+        <li>Mga Post</li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="main">
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Trending</li>
-          <li>Subscriptions</li>
-          <li>Library</li>
-        </ul>
-      </nav>
-    </aside>
-
-    <section class="videos">
-      <!-- Example video thumbnails -->
+  <main>
+    <section class="video-grid">
+      <!-- Repeat video card -->
       <div class="video-card">
-        <div class="thumb"></div>
-        <div class="info">
-          <div class="title">Video Title</div>
-          <div class="channel">Channel Name</div>
-        </div>
+        <img src="https://via.placeholder.com/300x180" alt="Video Thumbnail">
+        <p>Sample Video Title</p>
       </div>
-      <!-- Duplicate .video-card as needed -->
+      <!-- Add more video cards as needed -->
     </section>
   </main>
+
+  <footer>
+    © francezca15 2025
+  </footer>
 
   <script src="scripts.js"></script>
 </body>
