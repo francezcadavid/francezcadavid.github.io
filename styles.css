@@ -41,9 +41,20 @@ body {
   background: #f8f8f8;
   cursor: pointer;
 }
+
 .user-icon {
-  font-size: 1.5rem;
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  overflow: hidden;
 }
+
+.user-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 /* Layout */
 .main {
