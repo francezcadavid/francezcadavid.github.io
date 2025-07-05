@@ -6,105 +6,156 @@
 }
 body {
   font-family: Arial, sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-/* Header */
-.header {
+/* Header Banner */
+.banner {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+/* Channel Info Section */
+.channel-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
-}
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.search-bar {
-  flex: 1;
-  max-width: 600px;
-  margin: 0 20px;
-  display: flex;
-}
-.search-bar input {
-  flex: 1;
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 2px 0 0 2px;
-}
-.search-bar button {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-radius: 0 2px 2px 0;
-  background: #f8f8f8;
-  cursor: pointer;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: #181818;
+  border-bottom: 1px solid #222;
 }
 
-.user-icon {
-  width: 98px;
-  height: 98px;
+.profile-pic {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  overflow: hidden;
-}
-
-.user-icon img {
-  width: 100%;
-  height: 100%;
+  border: 2px solid #3ea6ff;
   object-fit: cover;
 }
 
-/* Layout */
-.main {
-  display: flex;
+.details h1 {
+  font-size: 1.8rem;
+  color: #fff;
 }
+
+.details p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.details a {
+  color: #3ea6ff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+  background-color: #212121;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  padding: 0.5rem 1rem;
+}
+
+nav li {
+  color: #ccc;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+nav li:hover {
+  color: #fff;
+}
+
+nav li.active {
+  color: #3ea6ff;
+  border-bottom: 3px solid #3ea6ff;
+  font-weight: bold;
+}
+
+/* Sidebar (optional if you want left nav like YouTube) */
 .sidebar {
   width: 200px;
-  background: #f9f9f9;
-  border-right: 1px solid #ddd;
-  height: calc(100vh - 60px);
-  padding-top: 20px;
+  background-color: #121212;
+  height: 100%;
+  border-right: 1px solid #222;
+  padding: 1rem;
 }
+
 .sidebar nav ul {
   list-style: none;
 }
+
 .sidebar nav li {
-  padding: 10px 20px;
+  color: #ccc;
+  padding: 10px;
   cursor: pointer;
 }
+
 .sidebar nav li:hover {
-  background: #e5e5e5;
+  background: #1f1f1f;
+  color: #fff;
 }
 
-/* Videos */
-.videos {
+/* Main Layout */
+.main {
+  display: flex;
+}
+
+/* Video Grid */
+.video-grid {
   flex: 1;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  padding: 20px;
 }
+
 .video-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 4px;
+  background-color: #181818;
+  border-radius: 8px;
   overflow: hidden;
+  transition: transform 0.2s ease;
   cursor: pointer;
 }
-.thumb {
-  background: #ccc;
+
+.video-card:hover {
+  transform: scale(1.02);
+}
+
+.video-card img {
   width: 100%;
-  height: 140px;
+  height: auto;
+  display: block;
 }
-.info {
-  padding: 10px;
+
+.video-card p {
+  padding: 0.5rem;
+  color: #ddd;
+  font-size: 0.95rem;
 }
-.title {
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
-.channel {
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
   font-size: 0.9rem;
-  color: #555;
+  color: #666;
 }
