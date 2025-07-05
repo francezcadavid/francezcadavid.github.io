@@ -3,109 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects Menu</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: sans-serif; }
-
-    header {
-      position: relative;
-      padding: 1rem;
-      background: #f5f5f5;
-      display: flex;
-      align-items: center;
-    }
-
-    .menu-toggle {
-      width: 30px;
-      height: 21px;
-      cursor: pointer;
-      position: relative;
-      z-index: 10;
-    }
-    .hamburger, .hamburger::before, .hamburger::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      background: #333;
-      transition: all 0.3s ease;
-    }
-    .hamburger::before { top: 0; }
-    .hamburger::after { bottom: 0; }
-
-    .menu-toggle.open .hamburger {
-      background: transparent;
-    }
-    .menu-toggle.open .hamburger::before {
-      transform: translateY(9px) rotate(45deg);
-    }
-    .menu-toggle.open .hamburger::after {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-
-    .nav-list {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100vh;
-      background: #fff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      transition: left 0.3s ease;
-    }
-    .nav-list.open {
-      left: 0;
-    }
-    .nav-list ul {
-      list-style: none;
-      margin-top: 4rem;
-    }
-    .nav-list li + li {
-      margin-top: 1rem;
-    }
-    .nav-list a {
-      display: block;
-      padding: 0.75rem 1rem;
-      text-decoration: none;
-      color: #333;
-    }
-    .nav-list a:hover {
-      background: #f0f0f0;
-    }
-
-    main {
-      padding: 2rem;
-    }
-  </style>
+  <title>Mini YouTube Layout</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="menu-toggle">
-      <div class="hamburger"></div>
+  <header class="header">
+    <div class="logo">MyTube</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search" />
+      <button>🔍</button>
     </div>
-    <h1 style="margin-left:1rem;">Youtube</h1>
+    <div class="user-icon">👤</div>
   </header>
 
-  <nav class="nav-list">
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="autoplaymusic-1.html" target="_blank">Music Website</a></li>
-    </ul>
-  </nav>
+  <main class="main">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Trending</li>
+          <li>Subscriptions</li>
+          <li>Library</li>
+        </ul>
+      </nav>
+    </aside>
 
-  <main>
-    <h2>Welcome!</h2>
-    <p>Subscribe to my youtube channel "<a href="https://www.youtube.com/@francezca15" target="_blank">francezca15</a>"</p>
+    <section class="videos">
+      <!-- Example video thumbnails -->
+      <div class="video-card">
+        <div class="thumb"></div>
+        <div class="info">
+          <div class="title">Video Title</div>
+          <div class="channel">Channel Name</div>
+        </div>
+      </div>
+      <!-- Duplicate .video-card as needed -->
+    </section>
   </main>
 
-  <script>
-    document.querySelector(".menu-toggle").addEventListener("click", function() {
-      this.classList.toggle("open");
-      document.querySelector(".nav-list").classList.toggle("open");
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
