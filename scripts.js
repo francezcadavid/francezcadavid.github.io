@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const videoCards = document.querySelectorAll('.video-card');
 
-  // Example click handler
   videoCards.forEach(card => {
     card.addEventListener('click', () => {
-      const title = card.querySelector('.title').innerText;
+      const titleElement = card.querySelector('p');
+      const title = titleElement ? titleElement.innerText : 'Untitled Video';
       alert(`You clicked on "${title}"`);
     });
   });
