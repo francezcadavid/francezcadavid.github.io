@@ -79,6 +79,18 @@
     main {
       padding: 2rem;
     }
+
+.countdown {
+    font-size: 2em;
+    color: #fff;
+    background: #222;
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+</style>
   </style>
 </head>
 <body>
@@ -112,6 +124,9 @@
     <p>Select a project from the menu to learn more.</p>
     <h3>Sponsor this creator.</h3>
     <iframe src="https://github.com/sponsors/francezcadavid/card" title="Sponsor francezcadavid" height="225" width="600" style="border: 0;"></iframe>
+
+<h2>Countdown to 2026</h2>
+<div id="countdown2026" class="countdown"></div>
     
   </main>
 
@@ -120,6 +135,32 @@
       this.classList.toggle("open");
       document.querySelector(".nav-list").classList.toggle("open");
     });
+
+  // Countdown to January 1, 2026
+  const newYearDate = new Date("January 1, 2026 00:00:00").getTime();
+  const countdownEl = document.getElementById("countdown2026");
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = newYearDate - now;
+
+    if (distance <= 0) {
+      countdownEl.innerHTML = "🎉 Happy New Year 2026!";
+      clearInterval(countdownTimer);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  };
+
+  const countdownTimer = setInterval(updateCountdown, 1000);
+  updateCountdown(); // Run immediately
+
   </script>
 </body>
 </html>
