@@ -3,177 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>francezca15 | Website</title>
+  <title>francezca15</title>
   <style>
-    /* Base Styles */
-    :root {
-      --bg: #121212;
-      --text: #f5f5f5;
-      --accent: #00bcd4;
-      --card: #1e1e1e;
-    }
-    body.light {
-      --bg: #ffffff;
-      --text: #121212;
-      --accent: #00796b;
-      --card: #f0f0f0;
-    }
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      cursor: none; /* Hide default cursor */
-      transition: background 0.3s, color 0.3s;
     }
-    header {
+
+    body {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--card);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: var(--text);
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
-    .toggle-btn {
-      background: var(--accent);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
+      min-height: 100vh;
+      background-color: #121212;
       color: #fff;
-      cursor: pointer;
     }
-    section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: var(--accent);
-    }
-    .project {
-      background: var(--card);
-      padding: 1.5rem;
-      margin: 1rem 0;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .project:hover {
-      transform: scale(1.02);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: var(--card);
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-    /* Custom Cursor */
-    .cursor {
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--accent);
-      border-radius: 50%;
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background-color: #1f1f1f;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
       position: fixed;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s;
-      z-index: 999;
+      top: 0;
+      bottom: 0;
+      left: 0;
     }
-    /* Download CV Button */
-    .cv-btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+      text-align: left;
+      color: #00bcd4;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav-links a {
       text-decoration: none;
-      margin-top: 1rem;
-      transition: background 0.3s;
+      color: #ccc;
+      font-size: 1rem;
+      transition: 0.3s;
     }
-    .cv-btn:hover {
-      background: #008ba3;
+
+    .nav-links a:hover {
+      color: #00bcd4;
+      margin-left: 5px;
+    }
+
+    .sidebar .socials {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .sidebar .socials a {
+      color: #ccc;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .sidebar .socials a:hover {
+      color: #00bcd4;
+    }
+
+    /* Main Content */
+    .content {
+      margin-left: 220px;
+      padding: 40px;
+      flex: 1;
+    }
+
+    .content h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00bcd4;
+    }
+
+    .content p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 180px;
+      }
+      .content {
+        margin-left: 180px;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+      }
+      .nav-links {
+        flex-direction: row;
+        gap: 10px;
+      }
+      .content {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Custom Cursor -->
-  <div class="cursor"></div>
 
-  <header>
+  <!-- Sidebar -->
+  <div class="sidebar">
     <h2>francezca15</h2>
-    <nav>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#youtube">YouTube</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
+      <a href="#more">More ▼</a>
     </nav>
-    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
-  </header>
-
-  <section id="about">
-    <h1>About Me</h1>
-    <p>Hello! This is my official website!</p>
-    <a href="cv.pdf" class="cv-btn" download>📄 Download CV</a>
-  </section>
-
-  <section id="projects">
-    <h1>Projects</h1>
-    <div class="project">
-      <h2>Project 1</h2>
-      <p>A short description of your project.</p>
+    <div class="socials">
+      <a href="#">YT</a>
+      <a href="#">IG</a>
+      <a href="#">FB</a>
     </div>
-    <div class="project">
-      <h2>Project 2</h2>
-      <p>A short description of your project.</p>
-    </div>
-  </section>
+  </div>
 
-  <section id="youtube">
-    <h1>YouTube</h1>
-    <p>Check out my channel: <a href="https://youtube.com/@francezca15" target="_blank">francezca15</a></p>
-    <!-- Example Embed -->
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-      frameborder="0" allowfullscreen></iframe>
-  </section>
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Welcome to francezca15's Website</h1>
+    <p>
+      This is your main content area. When you add sections like Portfolio, YouTube, or Blog,
+      they will show up here on the right side while your navigation stays on the left.
+    </p>
+  </div>
 
-  <section id="contact">
-    <h1>Contact</h1>
-    <p>Email: yourname@email.com</p>
-  </section>
-
-  <!-- Background Music -->
-  <audio controls autoplay loop>
-    <source src="anything4u-1.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-  </audio>
-
-  <footer>
-    © francezca15 2025
-  </footer>
-
-  <script>
-    // Theme Toggle
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-    }
-
-    // Custom Cursor
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.pageX + 'px';
-      cursor.style.top = e.pageY + 'px';
-    });
-  </script>
 </body>
 </html>
