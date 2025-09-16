@@ -67,6 +67,7 @@
       color: #ccc;
       font-size: 1.2rem;
       text-decoration: none;
+      transition: 0.3s;
     }
 
     .sidebar .socials a:hover {
@@ -89,8 +90,131 @@
     .content p {
       line-height: 1.6;
       color: #ddd;
+      margin-bottom: 20px;
     }
 
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: #ff4c4c;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .hero video {
+      border-radius: 12px;
+      margin-bottom: 20px;
+      max-width: 100%;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ff0000;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #cc0000;
+    }
+
+    /* Quick Highlights */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .highlights div {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .highlights div:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlights h3 {
+      margin: 10px 0;
+    }
+
+    .highlights p {
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    .highlights a {
+      color: #ff4c4c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .highlights a:hover {
+      text-decoration: underline;
+    }
+
+    /* Featured */
+    .featured {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .featured iframe {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    /* About */
+    .about {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .about p {
+      color: #ccc;
+      max-width: 600px;
+      margin: 10px auto;
+    }
+
+    .about a {
+      color: #ff4c4c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .sidebar {
         width: 180px;
@@ -152,71 +276,74 @@
       they will show up here on the right side while your navigation stays on the left.
     </p>
 
-   <main>
-  <!-- Hero Section -->
-  <section style="text-align:center; padding:50px 20px;">
-    <h1 style="font-size:2.5em; margin-bottom:10px;">Welcome to <span style="color:#ff4c4c;">francezca15</span></h1>
-    <p style="font-size:1.2em; color:#ccc; margin-bottom:20px;">
-      Game Tutorials • Reviews • Projects
-    </p>
-    <a href="https://www.youtube.com/@francezca15" target="_blank"
-       style="display:inline-block; padding:12px 20px; background:#ff0000; color:#fff; border-radius:8px; text-decoration:none; font-weight:bold;">
-       ▶ Watch on YouTube
-    </a>
-  </section>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Welcome to <span>francezca15</span></h1>
+        <p>Game Tutorials • Reviews • Projects</p>
 
-  <!-- Quick Highlights -->
-  <section style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; padding:40px;">
-    <div style="background:#2a2a2a; padding:20px; border-radius:12px; text-align:center;">
-      🎮 <h3>Gaming Tutorials</h3>
-      <p style="color:#aaa;">Step-by-step guides to level up your gameplay.</p>
-      <a href="youtube.html" style="color:#ff4c4c; text-decoration:none;">Explore ➝</a>
-    </div>
-    <div style="background:#2a2a2a; padding:20px; border-radius:12px; text-align:center;">
-      💻 <h3>Projects & Portfolio</h3>
-      <p style="color:#aaa;">Showcasing my works and creative experiments.</p>
-      <a href="portfolio.html" style="color:#ff4c4c; text-decoration:none;">Explore ➝</a>
-    </div>
-    <div style="background:#2a2a2a; padding:20px; border-radius:12px; text-align:center;">
-      🍔 <h3>Reviews</h3>
-      <p style="color:#aaa;">Honest thoughts on food, products, and more.</p>
-      <a href="reviews.html" style="color:#ff4c4c; text-decoration:none;">Explore ➝</a>
-    </div>
-    <div style="background:#2a2a2a; padding:20px; border-radius:12px; text-align:center;">
-      ✉️ <h3>Contact Me</h3>
-      <p style="color:#aaa;">Let’s connect and collaborate together.</p>
-      <a href="contact.html" style="color:#ff4c4c; text-decoration:none;">Message ➝</a>
-    </div>
-  </section>
+        <h2>Guide to Install Excel 2016 in Windows 10 Home!</h2>
+        <video width="640" height="360" controls>
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
 
-  <!-- Featured Content -->
-  <section style="padding:50px 20px; text-align:center;">
-    <h2 style="margin-bottom:20px;">Featured</h2>
-    <div style="max-width:600px; margin:0 auto;">
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed?list=UU" 
-              title="YouTube video player" frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen></iframe>
-    </div>
-  </section>
+        <br>
+        <a href="https://www.youtube.com/@francezca15" target="_blank" class="btn">
+          ▶ Watch on YouTube
+        </a>
+      </section>
 
-  <!-- About Preview -->
-  <section style="padding:40px 20px; text-align:center;">
-    <h2>About Me</h2>
-    <p style="color:#ccc; max-width:600px; margin:10px auto;">
-      Hi! I’m <strong>francezca15</strong> — a content creator who loves gaming, tech, and sharing ideas.
-      This site is my space to showcase tutorials, reviews, and projects. 🎉
-    </p>
-    <a href="about.html" style="color:#ff4c4c; text-decoration:none; font-weight:bold;">Read More ➝</a>
-  </section>
+      <!-- Quick Highlights -->
+      <section class="highlights">
+        <div>
+          🎮 <h3>Gaming Tutorials</h3>
+          <p>Step-by-step guides to level up your gameplay.</p>
+          <a href="youtube.html">Explore ➝</a>
+        </div>
+        <div>
+          💻 <h3>Projects & Portfolio</h3>
+          <p>Showcasing my works and creative experiments.</p>
+          <a href="portfolio.html">Explore ➝</a>
+        </div>
+        <div>
+          🍔 <h3>Reviews</h3>
+          <p>Honest thoughts on food, products, and more.</p>
+          <a href="reviews.html">Explore ➝</a>
+        </div>
+        <div>
+          ✉️ <h3>Contact Me</h3>
+          <p>Let’s connect and collaborate together.</p>
+          <a href="contact.html">Message ➝</a>
+        </div>
+      </section>
 
-  <!-- Footer -->
-  <footer style="text-align:center; padding:20px; color:#777;">
-    © francezca15 2025
-  </footer>
-</main>
+      <!-- Featured Content -->
+      <section class="featured">
+        <h2>Featured</h2>
+        <div style="max-width:600px; margin:0 auto;">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed?list=UU" 
+                  title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+      </section>
 
-    
+      <!-- About Preview -->
+      <section class="about">
+        <h2>About Me</h2>
+        <p>
+          Hi! I’m <strong>francezca15</strong> — a content creator who loves gaming, tech, and sharing ideas.
+          This site is my space to showcase tutorials, reviews, and projects. 🎉
+        </p>
+        <a href="about.html">Read More ➝</a>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        © francezca15 2025
+      </footer>
+    </main>
   </div>
 
 </body>
